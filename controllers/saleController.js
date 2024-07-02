@@ -1,5 +1,5 @@
 // controllers/saleController.js
-const Sale = require('../models/Sale');
+const Sale = require('../models/sale');
 
 exports.getAllSales = async (req, res) => {
   try {
