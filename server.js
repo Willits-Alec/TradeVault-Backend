@@ -15,7 +15,6 @@ app.use(cors());
 
 // Check if MONGO_URI is loaded
 const mongoURI = process.env.MONGO_URI;
-// console.log('Mongo URI:', mongoURI);
 
 mongoose.connect(mongoURI).then(() => {
   console.log('Connected to MongoDB');
