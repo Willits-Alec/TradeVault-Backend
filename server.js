@@ -28,3 +28,7 @@ app.use('/sales', saleRoutes);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+app.get('/', (req, res) => {
+  res.send('Welcome to TradeVault Backend');
+});
