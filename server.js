@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'dist/trade-vault-frontend')));
 
 // Angular app wildcard route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/trade-vault-frontend/browser/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/trade-vault-frontend/index.html'));
 });
 
 // Root route
