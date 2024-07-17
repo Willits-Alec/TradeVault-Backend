@@ -55,7 +55,7 @@ fs.access(pathToIndex, fs.constants.F_OK, (err) => {
 
 // Angular app wildcard route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/trade-vault-frontend/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/trade-vault-frontend/browser/index.html'));
 });
 
 // Root route
