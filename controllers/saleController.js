@@ -33,6 +33,7 @@ exports.modifySale = async (req, res) => {
 };
 
 exports.deleteSale = async (req, res) => {
+  console.log('Deleting sale with ID:', req.params.id); // Log the ID
   try {
     const sale = await Sale.findByIdAndDelete(req.params.id);
     if (!sale) {
