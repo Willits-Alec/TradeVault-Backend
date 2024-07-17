@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // CORS Configuration
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: 'https://tradevault-frontend.onrender.com',
   optionsSuccessStatus: 200
 }));
 
