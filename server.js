@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const saleRoutes = require('./routes/saleRoutes');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -41,6 +42,17 @@ app.use('/sales', saleRoutes);
 
 // Serve static files from the Angular app
 app.use(express.static(path.join(__dirname, 'dist/trade-vault-frontend')));
+
+// check if the index.html file exists when frontend server starts. 
+const pathToIndex = path.join(__dirname, 'dist/trade-vault-frontend/index.html');
+fs.access(pathToIndex, fs.constants.F_OK, (err) => {
+  if (err) {
+    console.error(`File does not exist: ${pathToIndex}`);
+  } else {
+    console.log(`File exists: ${pathToIndex}`);
+  }
+});
+
 
 // Angular app wildcard route
 app.get('*', (req, res) => {
