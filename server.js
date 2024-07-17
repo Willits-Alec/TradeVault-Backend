@@ -41,7 +41,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use('/sales', saleRoutes);
 
 // Serve static files from the Angular app
-app.use(express.static(path.join(__dirname, 'dist/trade-vault-frontend/browser')));
+app.use(express.static(path.join(__dirname, 'dist/trade-vault-frontend/browser/index.html')));
 
 // check if the index.html file exists when frontend server starts. 
 const pathToIndex = path.join(__dirname, 'dist/trade-vault-frontend/browser/index.html');
@@ -52,7 +52,6 @@ fs.access(pathToIndex, fs.constants.F_OK, (err) => {
     console.log(`File exists: ${pathToIndex}`);
   }
 });
-
 
 // Angular app wildcard route
 app.get('*', (req, res) => {
